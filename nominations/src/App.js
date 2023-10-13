@@ -1,10 +1,28 @@
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Intro from './pages/Intro';
+import CreateNom from './pages/CreateNomination';
+import Reason from './pages/Reason';
+import NoPage from './pages/NoPage';
+import theme from './styles/theme';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header />
+      <h2>The different pages will go here</h2>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Intro />} />
+          <Route path='/intro' element={<Intro />} />
+          <Route path='/create-nomination' element={<CreateNom />} />
+          <Route path='/reason' element={<Reason />} />
+          <Route path='*' element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -15,9 +33,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn Reactyyy
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
