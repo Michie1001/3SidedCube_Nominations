@@ -8,6 +8,7 @@ import Reason from './pages/Reason';
 import NoPage from './pages/NoPage';
 import theme from './styles/theme';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           Learn Reactyyy
         </a>
       </header> */}
+      <Footer />
     </div>
   );
 }
