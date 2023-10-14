@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './styles/App.css';
+import './styles/StylesToBeTranslated.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Intro from './pages/Intro';
 import CreateNom from './pages/CreateNomination';
@@ -10,7 +11,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen bg-blue-500">
       <Header />
       <h2>The different pages will go here</h2>
       <BrowserRouter>
