@@ -197,6 +197,21 @@ select>option {
     padding: 2rem;
 }
 
+/* overview */
+.info-section {
+    background-color: var(--grey-light);
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+.section-name {
+    font-weight: 700;
+}
+
+.section-info {
+    color: var(--grey-dark);
+}
+
 /* footer */
 
 .footer {
