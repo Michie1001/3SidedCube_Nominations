@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import banner from './images/banner.png';
 import './styles/App.css';
 import './styles/StylesToBeTranslated.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -21,7 +22,9 @@ function App() {
     <div className="h-screen bg-blue-500">
       <QueryClientProvider client={queryClient}>
         <Header />
-        <h2>The different pages will go here</h2>
+        <div className="bg-img h-screen w-screen">
+          <img src={banner} />
+        </div>
         <BrowserRouter>
           <Routes>
             <Route index element={<Intro />} />
