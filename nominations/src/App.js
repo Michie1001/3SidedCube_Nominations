@@ -10,6 +10,11 @@ import {
 import Intro from './pages/Intro';
 import CreateNom from './pages/CreateNomination';
 import Reason from './pages/Reason';
+import Process from './pages/Process';
+import Overview from './pages/Overview';
+import Success from './pages/Success';
+import Nominations from './pages/Nominations';
+import NullNominations from './pages/NullNominations';
 import NoPage from './pages/NoPage';
 import theme from './styles/theme';
 import Header from './components/Header';
@@ -31,6 +36,11 @@ function App() {
             <Route path='/intro' element={<Intro />} />
             <Route path='/create-nomination' element={<CreateNom />} />
             <Route path='/reason' element={<Reason />} />
+            <Route path='/process' element={<Process />} />
+            <Route path='/overview' element={<Overview />} />
+            <Route path='/success' element={<Success />} />
+            <Route path='/nominations' element={<Nominations />} />
+            <Route path='/null' element={<NullNominations />} />
             <Route path='*' element={<NoPage />} />
           </Routes>
         </BrowserRouter>

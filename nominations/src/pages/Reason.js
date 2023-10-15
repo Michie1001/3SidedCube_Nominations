@@ -23,7 +23,7 @@ export default function Reason() {
                                     BACK
                                 </button>
                             </Link>
-                            <Link to="/reason" className='flex justify-center'>
+                            <Link to="/process" className='flex justify-center'>
                                 <button type="button" className='button-primary-inactive w-40'>
                                     NEXT
                                 </button>
