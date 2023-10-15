@@ -1,23 +1,34 @@
+import { Link } from 'react-router-dom';
+import jumbo from '../images/reason/reason3.png';
+
 export default function Success() {
     return (
-        <div className="success">
-            <button className="button-primary-active">Button</button>
-            <input placeholder="Enter text here"></input>
-            <select>
-                <option value="0">Select car:</option>
-                <option value="1">Audi</option>
-                <option value="2">BMW</option>
-                <option value="3">Citroen</option>
-                <option value="4">Ford</option>
-                <option value="5">Honda</option>
-                <option value="6">Jaguar</option>
-                <option value="7">Land Rover</option>
-                <option value="8">Mercedes</option>
-                <option value="9">Mini</option>
-                <option value="10">Nissan</option>
-                <option value="11">Toyota</option>
-                <option value="12">Volvo</option>
-            </select>
+        <>
+            <div className="bg h-screen w-screen flex justify-center">
+                <div className="container max-w-2xl intro-screen">
+                    <div className='jumbo-container'>
+                        <img src={jumbo} alt="Jumbo image of the cube office" />
+                    </div>
+                    <div className='box-text'>
+                        <h2>NOMINATION SUBMITTED</h2>
+                        <p>Thank you for taking the time to fill out this form! Why not nominate another cube?</p>
+
+                        <div className='navigation flex justify-center'>
+                            <Link to="/nominations" className='flex justify-center'>
+                                <button type="button" className='button-secondary-active w-42'>
+                                    VIEW NOMINATION
+                                </button>
+                            </Link>
+                            <Link to="/create-nomination" className='flex justify-center'>
+                                <button type="button" className='button-secondary-active w-40'>
+                                    CREATE NEW NOMINATION
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             {/* <FormControl>
                 <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
                 <RadioGroup
@@ -59,6 +70,6 @@ export default function Success() {
                 valueLabelDisplay="auto"
                 aria-labelledby="non-linear-slider"
             /> */}
-        </div>
+        </>
     );
 }

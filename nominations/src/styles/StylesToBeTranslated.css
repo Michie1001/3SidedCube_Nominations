@@ -57,7 +57,7 @@ button {
     line-height: 1.5rem;
     letter-spacing: 0.08rem;
     text-transform: uppercase;
-    border: 0.1rem solid var(--black);
+    border: 0.2rem solid var(--black);
     outline-color: var(--primary-pink);
 }
 
