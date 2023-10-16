@@ -2,7 +2,11 @@
 This is an assessment project using ReactJS, Tailwind, React Hook forms with Yup validation, Rest requests using Tanstack query combined with openAPI codegen
 
 ---
-### `npm start`
+
+### To open the project locally ...
+Navigate to the nominations directory and run:
+
+`npm start` 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
