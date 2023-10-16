@@ -1,4 +1,4 @@
-import logo from '../icons/nav-logo.png';
+import Progress from '../components/ProgressBar';
 import inbox from '../icons/inbox.png';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -23,6 +23,8 @@ export default function Header() {
                     <span className='hidden md:flex'>Your nominations</span>
                 </a>
             </div>
+
+            <Progress />
         </>
     );
 }

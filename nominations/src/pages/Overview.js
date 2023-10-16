@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import jumbo from '../images/reason/reason3.png';
+import Edit from '../icons/edit.png';
 
 export default function Overview() {
 
@@ -11,8 +12,8 @@ export default function Overview() {
                         <img src={jumbo} alt="Jumbo image of the cube office" />
                     </div>
                     <div className='box-text'>
-                        <h2>nomination overview</h2>
-                        <p>Thank you for taking the time to nominate a fellow cube. Please check your answers before submitting.</p>
+                        <h2 className='text-center'>nomination overview</h2>
+                        <p className='text-center'>Thank you for taking the time to nominate a fellow cube. Please check your answers before submitting.</p>
                         <div>
                             <div className='info-section flex justify-between'>
                                 <div className='info'>
@@ -20,7 +21,9 @@ export default function Overview() {
                                     <div className='section-info'>Dummy name</div>
                                 </div>
                                 <Link to="/create-nomination" className='flex justify-center'>
-                                    <div className='edit'>edit icon</div>
+                                    <div className='edit'>
+                                        <img src={Edit} />
+                                    </div>
                                 </Link>
                             </div>
                             <div className='info-section flex justify-between'>
@@ -29,7 +32,9 @@ export default function Overview() {
                                     <div className='section-info'>Dummy reason</div>
                                 </div>
                                 <Link to="/reason" className='flex justify-center'>
-                                    <div className='edit'>edit icon</div>
+                                    <div className='edit'>
+                                        <img src={Edit} />
+                                    </div>
                                 </Link>
                             </div>
                             <div className='info-section flex justify-between'>
@@ -38,7 +43,9 @@ export default function Overview() {
                                     <div className='section-info'>Dummy thoughts</div>
                                 </div>
                                 <Link to="/process" className='flex justify-center'>
-                                    <div className='edit'>edit icon</div>
+                                    <div className='edit'>
+                                        <img src={Edit} />
+                                    </div>
                                 </Link>
                             </div>
                         </div>
