@@ -145,6 +145,7 @@ select>option {
 /* header */
 
 .header {
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,12 +190,60 @@ select>option {
 }
 
 .jumbo-container {
-    height: 18.5rem;
+    max-height: 18.5rem;
     overflow: hidden;
 }
 
 .box-text {
     padding: 2rem;
+    font-family: var(--secondary-font);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 1rem;
+}
+
+.box-text>h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: inherit;
+}
+
+.box-text>h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+    line-height: inherit;
+}
+
+.box-text>p {
+    letter-spacing: 0.03rem;
+    margin: 1rem 0;
+}
+
+/* create nomination */
+form>label {
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+/* cancel modal */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+}
+
+.modal-container {
+    z-index: 5;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    box-shadow: var(--shadow-light);
+    padding: 2rem;
+}
+
+.modal-container>h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* overview */
@@ -248,9 +297,12 @@ select>option {
 /* media query */
 @media only screen and (min-width: 600px) {
     .intro-screen {
-        max-height: 80vh;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
         overflow: hidden;
-        margin: 3.5rem 0;
         background-color: var(--white);
         box-shadow: var(--shadow-light);
         display: flex;

@@ -6,9 +6,12 @@ import { useQuery } from 'react-query';
 import { formSchema } from '../validations/NominationValidation';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Modal from '../components/CancelModal'
 
 
 export default function CreateNom() {
+    const [openModal, setOpenModal] = useState(false);
+
     // const { data: nominees, error, isLoading } = useQuery('nominees', async () => {
     //     const response = await axios.get('https://cube-academy-api.cubeapis.com/api/nominee');
     //     return response.data;
@@ -57,7 +60,7 @@ export default function CreateNom() {
                         <form onSubmit={handleSubmit(formSubmitHandler)}>
                             <label
                                 htmlFor="nomineeName"
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                                className="block mb-2 "
                             >
                                 Cube's name
                             </label>
@@ -65,7 +68,7 @@ export default function CreateNom() {
                                 {...register("nomineeName")}
                                 name="nomineeName"
                                 id="nomineeName"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="mt-0 ml-0"
                             >
                                 <option value="">Dummy names</option>
                                 <option value="">Dummy name 1</option>
@@ -92,11 +95,9 @@ export default function CreateNom() {
                             </select> */}
                         </form>
                         <div className='navigation flex justify-between'>
-                            <Link to="/create-nomination" className='flex justify-center'>
-                                <button type="button" className='button-secondary-active w-24'>
-                                    BACK
-                                </button>
-                            </Link>
+                            <button type="button" className='button-secondary-active w-24' onClick={() => setOpenModal(true)}>
+                                BACK
+                            </button>
                             <Link to="/reason" className='flex justify-center'>
                                 <button type="submit" className='button-primary-inactive w-40'>
                                     NEXT
@@ -107,6 +108,7 @@ export default function CreateNom() {
                 </div>
 
             </div>
+            <Modal open={openModal} close={() => setOpenModal(false)} />
         </>
     );
 }

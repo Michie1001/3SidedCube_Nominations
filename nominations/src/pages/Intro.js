@@ -9,7 +9,7 @@ export default function Intro() {
                     <div className='jumbo-container'>
                         <img src={jumbo} alt="Jumbo image of the cube office" />
                     </div>
-                    <div className='box-text'>
+                    <div className='box-text text-center'>
                         <h1>CUBE OF THE MONTH NOMINATIONS</h1>
                         <p>At cube we’re passionate about recognising the great work that our cubes do. Each month one of our cubes are crowned cube of the month 👑⭐. Please nominate who you think deserves this month's title.</p>
                         <Link to="/create-nomination" className='flex justify-center'>
