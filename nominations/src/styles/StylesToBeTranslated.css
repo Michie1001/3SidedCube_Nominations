@@ -276,6 +276,20 @@ form>label {
     color: var(--grey-dark);
 }
 
+/* success */
+.short-btn {
+    width: max-content;
+    padding: 0 2.5rem;
+}
+
+/* 404 */
+.notFound {
+    overflow: hidden;
+    max-width: 34rem;
+    max-height: 34rem;
+    margin: 0 auto;
+}
+
 /* footer */
 
 .footer {

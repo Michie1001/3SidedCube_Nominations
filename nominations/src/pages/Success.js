@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import jumbo from '../images/reason/reason3.png';
+import Confetti from '../components/Confetti';
 
 export default function Success() {
     return (
         <>
+            {/* <Confetti /> */}
             <div className="bg h-screen w-screen flex justify-center">
                 <div className="container max-w-2xl intro-screen">
                     <div className='jumbo-container'>
@@ -14,13 +16,13 @@ export default function Success() {
                         <p>Thank you for taking the time to fill out this form! Why not nominate another cube?</p>
 
                         <div className='navigation flex justify-center'>
-                            <Link to="/nominations" className='flex justify-center'>
-                                <button type="button" className='button-secondary-active w-42'>
+                            <Link to="/tobecreated" className='flex justify-center'>
+                                <button type="button" className='button-secondary-active w-42 short-btn'>
                                     VIEW NOMINATION
                                 </button>
                             </Link>
                             <Link to="/create-nomination" className='flex justify-center'>
-                                <button type="button" className='button-secondary-active w-40'>
+                                <button type="button" className='button-secondary-active w-42 short-btn'>
                                     CREATE NEW NOMINATION
                                 </button>
                             </Link>

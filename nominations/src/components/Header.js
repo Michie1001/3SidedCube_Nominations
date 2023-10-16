@@ -18,7 +18,7 @@ export default function Header() {
                         <span className='hidden md:block nav-text' >3 Sided Cube</span>
                     </div>
                 </a>
-                <a className='nominations'>
+                <a href='/toBeCreated' className='nominations'>
                     <img src={inbox} alt="Notifications" className='md:hidden' />
                     <span className='hidden md:flex'>Your nominations</span>
                 </a>
