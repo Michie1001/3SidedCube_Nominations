@@ -1,0 +1,28 @@
+{
+  "nominees": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Smith"
+    }
+  ],
+  "nominations": [
+    {
+      "id": "1",
+      "nomineeId": "1",
+      "reason": "Outstanding performance",
+      "process": "fair"
+    },
+    {
+      "id": 2,
+      "nomineeId": "2",
+      "reason": "Excellent work",
+      "process": "very_fair"
+    }
+  ]
+}
