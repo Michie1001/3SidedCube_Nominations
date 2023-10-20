@@ -7,10 +7,13 @@ import { formSchema } from '../validations/NominationValidation';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Modal from '../components/CancelModal'
+import { UseGetAllNominees } from '../api/Hooks/GetAllNominees';
 
 
 export default function CreateNom() {
     const [openModal, setOpenModal] = useState(false);
+
+    const { data, isLoading } = UseGetAllNominees();
 
     // const { data: nominees, error, isLoading } = useQuery('nominees', async () => {
     //     const response = await axios.get('https://cube-academy-api.cubeapis.com/api/nominee');
@@ -55,6 +58,25 @@ export default function CreateNom() {
                         <img src={jumbo} alt="Jumbo image of the cube office" />
                     </div>
                     <div className='box-text'>
+                        <div>
+                            {
+                                isLoading ? (
+                                    //<CircularProgress size='1.5rem' isIndeterminate color='primary-pink'/>
+                                    <h3>Loading...</h3>
+                                ) : data ? (
+                                    data.data.map((nominee, key) => {
+                                        return (
+                                            <ul>
+                                                <li>
+                                                    {nominee.first_name}
+                                                </li>
+                                            </ul>
+                                        )
+                                    })) : (
+                                    <h3>N/A</h3>
+                                )
+                            }
+                        </div>
                         <h2>I’d like to nominate... </h2>
                         <p>Please select a cube who you feel has done something honourable this month or just all round has a great work ethic.</p>
                         <form onSubmit={handleSubmit(formSubmitHandler)}>
