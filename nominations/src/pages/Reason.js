@@ -25,7 +25,7 @@ export default function Reason() {
                                 </button>
                             </Link>
                             <Link to="/process" className='flex justify-center'>
-                                <button type="button" className='button-primary-inactive w-40'>
+                                <button type="button" className='button-primary-active w-40' disabled='true'>
                                     NEXT
                                 </button>
                             </Link>

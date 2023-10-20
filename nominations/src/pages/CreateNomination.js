@@ -121,7 +121,7 @@ export default function CreateNom() {
                                 BACK
                             </button>
                             <Link to="/reason" className='flex justify-center'>
-                                <button type="submit" className='button-primary-inactive w-40'>
+                                <button type="submit" className='button-primary-active w-40' disabled='true'>
                                     NEXT
                                 </button>
                             </Link>

@@ -24,7 +24,7 @@ export default function Process() {
                                 </button>
                             </Link>
                             <Link to="/overview" className='flex justify-center'>
-                                <button type="button" className='button-primary-inactive w-40'>
+                                <button type="button" className='button-primary-active w-40' disabled='true'>
                                     NEXT
                                 </button>
                             </Link>
