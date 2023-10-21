@@ -15,4 +15,6 @@ export const setBearerToken = (token) => {
     }
 };
 
+setBearerToken(token);
+
 export default instance;

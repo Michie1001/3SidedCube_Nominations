@@ -1,8 +1,28 @@
 import { Link } from 'react-router-dom';
 import jumbo from '../images/reason/reason3.png';
+import React from 'react';
+import state from 'react';
+import { handleChange } from 'react';
 
 export default function Reason() {
     const selectedNominee = 'Jordan'; //TODO bind the nominee name from the API
+
+    state = {
+        disabled: true
+    }
+
+    handleChange = (e) => {
+        if (e.target.value.length >= 10) {
+            this.setState({
+                disabled: false
+            });
+        }
+        else {
+            this.setState({
+                disabled: true
+            });
+        }
+    }
 
     return (
         <>
@@ -16,7 +36,7 @@ export default function Reason() {
                         <p>Please let us know why you think this cube deserves the ‘cube of the month’ title 🏆⭐</p>
                         <div>
                             <label><b>Reasoning</b></label>
-                            <textarea placeholder="Enter reason here"></textarea>
+                            <textarea placeholder="Enter reason here" onChange={this.handleChange}></textarea>
                         </div>
                         <div className='navigation flex justify-between'>
                             <Link to="/create-nomination" className='flex justify-center'>
@@ -25,7 +45,7 @@ export default function Reason() {
                                 </button>
                             </Link>
                             <Link to="/process" className='flex justify-center'>
-                                <button type="button" className='button-primary-active w-40' disabled='true'>
+                                <button type="button" className='button-primary-active w-40' disabled={this.state.disabled}>
                                     NEXT
                                 </button>
                             </Link>

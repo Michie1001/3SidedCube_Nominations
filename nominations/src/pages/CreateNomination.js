@@ -13,6 +13,18 @@ import { UseGetAllNominees } from '../api/Hooks/GetAllNominees';
 export default function CreateNom() {
     const [openModal, setOpenModal] = useState(false);
 
+    // this.state = {
+    //     disabled: true
+    // }
+
+    // this.handleChange = (e) => {
+    //     if (e.target.value.index > 0) {
+    //         this.setState({
+    //             disabled: false
+    //         });
+    //     }
+    // }
+
     const { data, isLoading } = UseGetAllNominees();
 
     // const { data: nominees, error, isLoading } = useQuery('nominees', async () => {
@@ -58,25 +70,7 @@ export default function CreateNom() {
                         <img src={jumbo} alt="Jumbo image of the cube office" />
                     </div>
                     <div className='box-text'>
-                        <div>
-                            {
-                                isLoading ? (
-                                    //<CircularProgress size='1.5rem' isIndeterminate color='primary-pink'/>
-                                    <h3>Loading...</h3>
-                                ) : data ? (
-                                    data.data.map((nominee, key) => {
-                                        return (
-                                            <ul>
-                                                <li>
-                                                    {nominee.first_name}
-                                                </li>
-                                            </ul>
-                                        )
-                                    })) : (
-                                    <h3>N/A</h3>
-                                )
-                            }
-                        </div>
+
                         <h2>I’d like to nominate... </h2>
                         <p>Please select a cube who you feel has done something honourable this month or just all round has a great work ethic.</p>
                         <form onSubmit={handleSubmit(formSubmitHandler)}>
@@ -92,10 +86,22 @@ export default function CreateNom() {
                                 id="nomineeName"
                                 className="mt-0 ml-0"
                             >
-                                <option value="">Dummy names</option>
-                                <option value="">Dummy name 1</option>
-                                <option value="">Dummy name 2</option>
-                                <option value="">Dummy name 3</option>
+                                {
+                                    isLoading ? (
+                                        //<CircularProgress size='1.5rem' isIndeterminate color='primary-pink'/>
+                                        <p>Loading...</p>
+                                    ) : data ? (
+                                        data.data.data.map((nominee, key) => {
+                                            return (
+                                                <option>
+                                                    {nominee.first_name} &nbsp;
+                                                    {nominee.last_name}
+                                                </option>
+                                            )
+                                        })) : (
+                                        <h3>N/A</h3>
+                                    )
+                                }
                             </select>{" "}
                             {errors.nomineeName ? (
                                 <span className="text-red-900">{errors.nomineeName.message}</span>
@@ -121,7 +127,7 @@ export default function CreateNom() {
                                 BACK
                             </button>
                             <Link to="/reason" className='flex justify-center'>
-                                <button type="submit" className='button-primary-active w-40' disabled='true'>
+                                <button type="submit" className='button-primary-active w-40' disabled="true">
                                     NEXT
                                 </button>
                             </Link>

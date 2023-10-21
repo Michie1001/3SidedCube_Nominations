@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect } from 'react';
-import axios from "axios";
+import axios from "../api";
 
 const allNominees = "https://cube-academy-api.cubeapis.com/api/nominee";
 const getAllNominees = async () => {
@@ -10,5 +10,6 @@ const getAllNominees = async () => {
 
 export const UseGetAllNominees = () => {
     const { isLoading, data } = useQuery(['allNominees'], getAllNominees);
+    //console.log(data);
     return { data, isLoading };
 }
