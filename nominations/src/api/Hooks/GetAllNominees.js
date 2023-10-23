@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect } from 'react';
 import axios from "../api";
 
 const allNominees = "https://cube-academy-api.cubeapis.com/api/nominee";
