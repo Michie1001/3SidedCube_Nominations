@@ -10,6 +10,6 @@ const getAllNominees = async () => {
 
 export const UseGetAllNominees = () => {
     const { isLoading, data } = useQuery(['allNominees'], getAllNominees);
-    //console.log(data);
+    console.log(data);
     return { data, isLoading };
 }

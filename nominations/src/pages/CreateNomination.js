@@ -10,7 +10,7 @@ import Modal from '../components/CancelModal'
 import { UseGetAllNominees } from '../api/Hooks/GetAllNominees';
 
 
-export default function CreateNom() {
+export default function CreateNom(setState, stater) {
     const [openModal, setOpenModal] = useState(false);
 
     // this.state = {
@@ -27,29 +27,7 @@ export default function CreateNom() {
 
     const { data, isLoading } = UseGetAllNominees();
 
-    // const { data: nominees, error, isLoading } = useQuery('nominees', async () => {
-    //     const response = await axios.get('https://cube-academy-api.cubeapis.com/api/nominee');
-    //     return response.data;
-    // });
-    // if (isLoading) {
-    //     return <div>Loading...</div>;
-    // }
-    // if (error) {
-    //     return <div>Error: {error.message}</div>;
-    // }
-
-    // const nomineeQuery = useQuery({
-    //     queryKey: ["nominees"], 
-    //     queryFn: () => waitFor(1000).then(() => [...nominees]),
-    // })
-
-    // const createNomination = async (event) => {
-    //     event.preventDefault()
-    //     let nomineeName = {
-    //         name: event.target[0]
-    //     };
-    //     const isValid = await formSchema.isValid(nomineeName);
-    // }
+    // const [selectedNomineeFN, setSelectedNomineeFN] = useState(0);
 
     const {
         register,
@@ -62,6 +40,15 @@ export default function CreateNom() {
     const formSubmitHandler = (data) => {
         console.log(data);
     };
+
+    const selectedFirstName = e => {
+        const selectedId = e.target.value;
+        const selectedFirstName = data.data.data.filter((d) => d.nominee_id == selectedId)[0];
+        //console.log(setState = selectedFirstName.first_name);
+        return setState = selectedFirstName.first_name;
+    }
+
+
     return (
         <>
             <div className="bg h-screen w-screen flex justify-center">
@@ -85,15 +72,16 @@ export default function CreateNom() {
                                 name="nomineeName"
                                 id="nomineeName"
                                 className="mt-0 ml-0"
+                                onChange={(e) => { selectedFirstName(e) }}
                             >
                                 {
                                     isLoading ? (
                                         //<CircularProgress size='1.5rem' isIndeterminate color='primary-pink'/>
-                                        <p>Loading...</p>
+                                        <option>Loading...</option>
                                     ) : data ? (
-                                        data.data.data.map((nominee, key) => {
+                                        data.data.data.map((nominee) => {
                                             return (
-                                                <option>
+                                                <option key={nominee.nominee_id} value={nominee.nominee_id}>
                                                     {nominee.first_name} &nbsp;
                                                     {nominee.last_name}
                                                 </option>
@@ -108,26 +96,13 @@ export default function CreateNom() {
                             ) : (
                                 <></>
                             )}
-                            {/* <label><b>Cube's name</b></label>
-                            <select>
-                                <option>Dummy name 1</option>
-                                <option>Dummy name 2</option>
-                                <option>Dummy name 3</option>
-                                <option>Dummy name 4</option>
-                                {/* <option value="">Select a Nominee</option>
-                                {nominees.map((nominee) => (
-                                    <option key={nominee.nominee_id} value={nominee.nominee_id}>
-                                        {nominee.first_name} {nominee.last_name}
-                                    </option>
-                                ))} 
-                            </select> */}
                         </form>
                         <div className='navigation flex justify-between'>
                             <button type="button" className='button-secondary-active w-24' onClick={() => setOpenModal(true)}>
                                 BACK
                             </button>
                             <Link to="/reason" className='flex justify-center'>
-                                <button type="submit" className='button-primary-active w-40' disabled="true">
+                                <button type="submit" className='button-primary-active w-40'>
                                     NEXT
                                 </button>
                             </Link>

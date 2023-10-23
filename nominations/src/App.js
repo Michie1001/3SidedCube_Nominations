@@ -15,8 +15,11 @@ import NoPage from './pages/NoPage';
 import theme from './styles/theme';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { useState } from 'react';
 
 function App() {
+  const [firstName, setFirstName] = useState();
+
   return (
     <div className="h-screen bg-blue-500">
       <Header />
@@ -27,8 +30,8 @@ function App() {
         <Routes>
           <Route index element={<Intro />} />
           <Route path='/intro' element={<Intro />} />
-          <Route path='/create-nomination' element={<CreateNom />} />
-          <Route path='/reason' element={<Reason />} />
+          <Route path='/create-nomination' element={<CreateNom setFirstName={setFirstName} />} />
+          <Route path='/reason' element={<Reason firstName={firstName} />} />
           <Route path='/process' element={<Process />} />
           <Route path='/overview' element={<Overview />} />
           <Route path='/success' element={<Success />} />
